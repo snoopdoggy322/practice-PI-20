@@ -141,7 +141,29 @@ void best() {
     cout << "Press enter to continue..." << endl;
     cin.get();
 }
-
+void remove(int val) {
+    //if (is_empty()) return;
+    if (head->data.id == val) {
+        remove_first();
+        return;
+    }
+    else if (tail->data.id == val) {
+        remove_last();
+        return;
+    }
+    list_t* slow = head;
+    list_t* fast = head->next;
+    while (fast && fast->data.id != val) {
+        fast = fast->next;
+        slow = slow->next;
+    }
+    if (!fast) {
+        cout << "This element does not exist" << endl;
+        return;
+    }
+    slow->next = fast->next;
+    delete fast;
+}
 void deletePath() {
     if(head == NULL) {
         cout << "Queue is empty" << endl;
@@ -149,7 +171,7 @@ void deletePath() {
         list_t *tmp = head;
         while(tmp != NULL) {
             if(tmp->data->id<8){
-                delete tmp;
+                remove tmp->data->id;
             }
             }
             tmp = tmp->next;
