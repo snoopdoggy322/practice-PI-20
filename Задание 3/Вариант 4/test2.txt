@@ -1,0 +1,17 @@
+Input - 
+1               Igorev          5               5               5
+5               Abishev         5               4               5
+4               Honsky          4               5               4
+6               Tsokol          5               5               5
+3               Yegorov         2               2               2
+2               Vasiliev        3               4               4
+
+Output - 
+Список успешно отсортирован:
+№               Фамилия         Физика          История         Математика
+5               Abishev         5               4               5
+4               Honsky          4               5               4
+1               Igorev          5               5               5
+6               Tsokol          5               5               5
+2               Vasiliev        3               4               4
+3               Yegorov         2               2               2

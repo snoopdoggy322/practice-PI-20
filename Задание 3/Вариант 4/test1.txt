@@ -1,0 +1,13 @@
+Input - 
+1               Ivanov          5               4               5
+2               Novikov         5               4               4
+3               Horoshii        4               4               3
+4               Kotov           3               4               5
+
+Output - 
+Список успешно отсортирован:
+№               Фамилия         Физика          История         Математика
+3               Horoshii        4               4               3
+1               Ivanov          5               4               5
+4               Kotov           3               4               5
+2               Novikov         5               4               4
