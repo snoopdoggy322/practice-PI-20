@@ -1,0 +1,6 @@
+Входные данные: 
+строка 1: assssdsadsdsada
+строка 2: qwweweqwe
+строка 3: asdsdsad
+Ожидаемые выходные данные:
+In the text 1 string(s) that begin and end with the same character 
