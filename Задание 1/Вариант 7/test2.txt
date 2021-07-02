@@ -1,0 +1,2 @@
+Input - "lejrfbehrbfehjbrf"
+Output - 0
