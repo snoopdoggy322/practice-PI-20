@@ -1,0 +1,6 @@
+Входные данные: 
+строка 1: aqewea
+строка 2: ftrtrqf
+строка 3: sdfds
+Ожидаемые выходные данные:
+In the text 0 string(s) that not begin and end with the same character 
