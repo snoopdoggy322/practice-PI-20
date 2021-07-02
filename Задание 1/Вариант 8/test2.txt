@@ -1,0 +1,6 @@
+Входные данные: 
+строка 1: aqeweq
+строка 2: ftrtrqq
+строка 3: sdfdf
+Ожидаемые выходные данные:
+In the text 0 string(s) that begin and end with the same character 
