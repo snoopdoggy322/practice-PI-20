@@ -1,0 +1,6 @@
+Входные данные: 
+строка 1: qqqwq
+строка 2: aaasa
+строка 3: ttrtrt
+Ожидаемые выходные данные:
+In the text 3 string(s) that begin and end with the same character 
