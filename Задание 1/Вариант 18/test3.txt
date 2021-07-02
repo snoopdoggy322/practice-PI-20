@@ -1,0 +1,6 @@
+Входные данные: 
+строка 1: qqqwa
+строка 2: aaaswe
+строка 3: ttrtrtyu
+Ожидаемые выходные данные:
+In the text 3 string(s) that not begin and end with the same character 
