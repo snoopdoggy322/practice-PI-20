@@ -1,0 +1,11 @@
+Input - 
+1               Ulyanova                5               5               5
+3               Zagorodniy              5               5               5
+2               Chibishev               3               4               4
+
+Output - 
+Список успешно отсортирован:
+№               Фамилия         Физика          История         Математика
+2               Chibishev               3               4               4
+1               Ulyanova                5               5               5
+3               Zagorodniy              5               5               5

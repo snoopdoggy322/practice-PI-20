@@ -1,0 +1,12 @@
+Input - 
+№               Фамилия         Физика          История         Математика
+1               Chibishev       5               5               5
+4               Kolyadovoi      5               4               4
+3               Zenskiy         5               5               5
+2               Kozlov          4               5               3
+
+Output - 
+Список отличников:
+№               Фамилия         Физика          История         Математика
+1               Chibishev       5               5               5
+3               Zenskiy         5               5               5

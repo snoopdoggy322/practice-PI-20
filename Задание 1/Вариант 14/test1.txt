@@ -1,0 +1,3 @@
+Input - HELLO! THIS IS A TEST APP TO CHECH () {} [] GRAMMAR
+
+Output - Сбалансировано

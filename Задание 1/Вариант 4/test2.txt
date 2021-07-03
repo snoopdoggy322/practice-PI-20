@@ -1,0 +1,8 @@
+Input - Введите количество строк: 5
+Введите строку[1]: QWERTYUIOPASDFGHJKLZXCVBNM
+Введите строку[2]: MNBVCZXLKJASDFGH
+Введите строку[3]: POLTGOFJALSOFDERF
+Введите строку[4]: JFKZKDJTOFPAKSQWEQW
+Введите строку[5]: QERWADSZXCS
+
+Output - Наиболее длинная строка под номером [1]. Количество символов - [26]
