@@ -10,7 +10,7 @@ class myexception: public exception
 {
     virtual const char* what() const throw()
     {
-        return "Exception happened";
+        return "Произошла ошибка";
     }
 } myexception;
 
@@ -230,16 +230,16 @@ void addNewStudent(List<Student> &lst) {
     int physicsMark;
     int historyMark;
 
-    cout<<" New student"<<endl;
-    cout<<"Student's surname: ";
+    cout<<" Новый студент"<<endl;
+    cout<<"Фамилия студента: ";
     cin>>surname;
-    cout<<endl<<"Math mark: ";
+    cout<<endl<<"Оценка по метематике: ";
     cin>>mathMark;
-    cout<<endl<<"Physics mark: ";
+    cout<<endl<<"Оценка по физике: ";
     cin>>physicsMark;
-    cout<<endl<<"History mark: ";
+    cout<<endl<<"Оценка по истории: ";
     cin>>historyMark;
-    cout<<endl<<"Done!";
+    cout<<endl<<"Сделано!";
 
     Student newStudent = *new Student(surname, mathMark, physicsMark, historyMark);
     lst.push_back(newStudent);
@@ -247,8 +247,8 @@ void addNewStudent(List<Student> &lst) {
 
 void showListData(List<Student> &lst) {
     cout <<left;
-    cout <<setw(2) <<"No"<<setw(8)<< "|"<<setw(20) << "Surname" << setw(13)<< "|" << setw(10)<<"Marks"<<'\n' <<
-    setw(30) << "--|--------------------------" << setw(10) << "| Math " << setw(10) << "| Physics " << setw(10) << "| Physics" << '\n';
+    cout <<setw(2) <<"Нет"<<setw(8)<< "|"<<setw(20) << "Фамилия" << setw(13)<< "|" << setw(10)<<"Оценки"<<'\n' <<
+    setw(30) << "--|--------------------------" << setw(10) << "| Математика " << setw(10) << "| Физика " << setw(10) << "| История" << '\n';
 
     for (int i = 0; i < lst.getSize(); ++i) {
         cout <<setw(2)<<i<<setw(8)<<"|"<<setw(20) <<lst[i].getSurname()<< setw(5) << "|" <<setw(5) <<lst[i].getMathMark()<< setw(5) << "| "<<setw(5)<<lst[i].getPhysicsMark()<< setw(5) << "| "<<setw(5)<<lst[i].getHistoryMark()<< '\n';
@@ -261,7 +261,7 @@ void saveToFile(List<Student> &lst){
     fs.open(path, fstream::in | fstream::out | fstream::app);
 
     if (!fs.is_open()){
-        cout<<"Error"<<endl;
+        cout<<"Ошибка"<<endl;
 
     } else{
         for (int i = 0; i < lst.getSize(); ++i) {
@@ -293,22 +293,22 @@ void readFile(List<Student> &lst){
         }
         fs.close();
     }
-    else cout << "Unable to open file";
+    else cout << "Не удалось открыть файл";
 }
 
 void searchAndCountAvgStudent(List<Student> &lst){
     string surname;
     try {
-        cout<<"Search by surname:"<<endl;
+        cout<<"Поиск по фамилии:"<<endl;
         cin>>surname;
         Student student = lst.search(surname);
 
-        cout<<"Student: "<<student.getSurname()<<endl;
+        cout<<"Студент: "<<student.getSurname()<<endl;
         float avg = float(student.getMathMark() + student.getPhysicsMark() + student.getHistoryMark())/3;
         cout<<"Среднее арифметическое по всем предметам: "<<roundf(avg * 100) / 100<<endl;
     }
     catch (exception& e){
-        cout << "Can't find "<<surname<<" student" << '\n';
+        cout << "Не могу найти "<<surname<<" студента" << '\n';
     }
 
 }
