@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -184,12 +183,12 @@ void BinaryTree<T>::printTableRecursively(Node<T> *node){
 template<typename T>
 void BinaryTree<T>::printTable() {
     if (root == nullptr) {
-        cout<<"Tree is not exists!"<<endl;
+        cout<<"Дерева не существует!"<<endl;
     }
     else {
         cout<<left;
-        cout <<setw(8)<< "|"<<setw(20) << "Surname" << setw(13)<< "|" << setw(10)<<"Marks"<<'\n' <<
-             setw(28) << "|---------------------------" << setw(10) << "| Math " << setw(10) << "| Physics " << setw(10) << "| Physics" << '\n';
+        cout <<setw(8)<< "|"<<setw(20) << "Фамилия" << setw(13)<< "|" << setw(10)<<"Оценки"<<'\n' <<
+             setw(28) << "|---------------------------" << setw(10) << "| Математика " << setw(10) << "| Физика " << setw(10) << "| История" << '\n';
         printTableRecursively(root);
     }
 }
@@ -200,7 +199,7 @@ void BinaryTree<T>::clearTreeRecursively(Node<T>* &node){
     clearTreeRecursively(node->left);
     clearTreeRecursively(node->right);
     Student st = node->data;
-    cout << "Deleting node: " << st.getSurname()<<endl;
+    cout << "Удаление узла: " << st.getSurname()<<endl;
     delete node;
     node = nullptr;
 }
@@ -218,7 +217,7 @@ void BinaryTree<T>::saveTreeToFileRecursively(Node<T> *node, fstream& fs){
     Student st = node->data;
 
     if (!fs.is_open()){
-        cout<<"Unable to open file"<<endl;
+        cout<<"Не удалось открыть файл"<<endl;
     } else{
         fs<<st.getSurname()<<","<<st.getMathMark()<<","<<st.getPhysicsMark()<<","<<st.getHistoryMark()<<"\n";
     }
@@ -284,7 +283,7 @@ void loadDataFromFile(BinaryTree<Student> &lst){
         }
         fs.close();
     }
-    else cout << "Unable to open file";
+    else cout << "Не удалось открыть файл";
 }
 
 ///MENU
@@ -309,16 +308,16 @@ void addNewStudent(BinaryTree<Student> &lst) {
     int physicsMark;
     int historyMark;
 
-    cout<<" New student"<<endl;
-    cout<<"Student's surname: ";
+    cout<<" Новый студент"<<endl;
+    cout<<"Фамилия студента: ";
     cin>>surname;
-    cout<<"Math mark: ";
+    cout<<"Оценка по математике: ";
     cin>>mathMark;
-    cout<<"Physics mark: ";
+    cout<<"Оценка по физике: ";
     cin>>physicsMark;
-    cout<<"History mark: ";
+    cout<<"Оценка по истории: ";
     cin>>historyMark;
-    cout<<"Done!"<<endl<<endl;
+    cout<<"Сделано"<<endl<<endl;
 
     Student newStudent = *new Student(surname, mathMark, physicsMark, historyMark);
     lst.addNode(newStudent);
