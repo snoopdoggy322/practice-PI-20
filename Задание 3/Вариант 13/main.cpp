@@ -1,9 +1,3 @@
-//
-//  main.cpp
-//  Practice
-//
-//  Created by Emin Bari on 29.06.2021.
-//
 
 #include <iostream>
 #include <string>
