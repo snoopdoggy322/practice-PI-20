@@ -1,0 +1,17 @@
+Input:
+Losev
+3
+3
+3
+
+Sidorov
+3
+3
+3
+
+Kuzmin
+3
+3
+3
+
+Output: Losev
