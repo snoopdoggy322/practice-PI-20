@@ -6,18 +6,13 @@ using namespace std;
 
 char** enterText();
 int countRowsWithArithmeticOperations(char** text, int numberOfRows);
-int numberOfRows = 0; 
+int numberOfRows = 10; 
 
 int main(int argc, char** argv) {
 	
-	char** text = enterText();
-	if (text == NULL) {
-		cout << "Error in text input." << endl;
-		return 1;
-	}
-	
+	char** text = enterText();	
 	int rowsWithArithmeticOperations = countRowsWithArithmeticOperations(text, numberOfRows);
-	cout << endl << "Number of rows with arithmetic operations: " << rowsWithArithmeticOperations << endl;
+	cout << rowsWithArithmeticOperations << endl;
 	
 	return 0;
 }
@@ -27,18 +22,9 @@ char** enterText() {
 	const int maxNumberOfRows = 100;	
 	const int maxLengthOfRow = 255;
 	
-	
-	cout << "Enter the number of rows: ";
-	cin >> numberOfRows;
-	if (numberOfRows < minNumberOfRows || numberOfRows > maxNumberOfRows) {
-		cout << "Wrong number of rows! ";
-		return NULL;
-	}
-	
 	char** text = new char* [numberOfRows];
-	for (int i = 0; i < numberOfRows; i++) text[i] = new char[maxLengthOfRow];
-	
-	cin.ignore();
+	for (int i = 0; i < numberOfRows; i++) text[i] = new char[maxLengthOfRow] {};
+
 	cout << "Enter the text: " << endl;
 	int rowsCount = 0;
 	while (rowsCount < numberOfRows){
