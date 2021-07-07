@@ -1,0 +1,2 @@
+Input:k
+Output:vvedite celoe chislo!

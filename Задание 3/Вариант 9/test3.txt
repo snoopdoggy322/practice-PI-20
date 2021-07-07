@@ -1,0 +1,15 @@
+Input:
+1
+Korotkov
+4
+4
+3
+
+Output:
+
+1
+Korotkov
+4
+4
+3
+

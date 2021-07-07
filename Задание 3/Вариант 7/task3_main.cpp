@@ -81,7 +81,7 @@ void pull() {
             tail = NULL;
         }
         delete tmp;
-        cout << "Train removed" << endl;
+        cout << "Student removed" << endl;
     }
     cout << "Press enter to continue..." << endl;
     cin.get();
@@ -110,17 +110,7 @@ void swap() {
     if(head == NULL) {
         cout << "Queue is empty" << endl;
     } else {
-        list_t *store = head;
-        list_t *tmp = head;
-        while(tmp != NULL) {
-            if(tmp->next->data->name="Иванов"||tmp->next->data->name="Петров"){
-                if(store!=NULL){
-                    tmp->next=store;
-                    store->next=tmp->next
-                }
-            }
-            tmp = tmp->next;
-        }
+      
     }
     cout << "Press enter to continue..." << endl;
     cin.get();
@@ -131,9 +121,8 @@ void best() {
     } else {
         list_t *tmp = head;
         while(tmp != NULL) {
-            if((tmp->data->history+tmp->data->math+tmp->data->physics)/3>=4.5){
-                cout<<tmp->data->name<<endl;
-            }
+            if((tmp->data.history+tmp->data.math+tmp->data.physics)/3>=4.5){
+                cout<<tmp->data.name<<endl;
             }
             tmp = tmp->next;
         }
@@ -144,11 +133,11 @@ void best() {
 void remove(int val) {
     //if (is_empty()) return;
     if (head->data.id == val) {
-        remove_first();
+        pull();
         return;
     }
     else if (tail->data.id == val) {
-        remove_last();
+        pull();
         return;
     }
     list_t* slow = head;
@@ -170,9 +159,8 @@ void deletePath() {
     } else {
         list_t *tmp = head;
         while(tmp != NULL) {
-            if(tmp->data->id<8){
-                remove tmp->data->id;
-            }
+            if(tmp->data.id<8){
+                remove(tmp->data.id);
             }
             tmp = tmp->next;
         }

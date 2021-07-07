@@ -1,0 +1,17 @@
+Input:
+Petrov
+3
+3
+3
+
+Sidorov
+4
+3
+4
+
+Zayev
+5
+3
+4
+
+Output: Petrov
