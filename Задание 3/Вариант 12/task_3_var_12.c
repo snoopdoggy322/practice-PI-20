@@ -16,6 +16,7 @@ struct List {
 
 List *addItem(List *oldLst, int *pCount, char *lastname, int physics, int history, int math) {
     if (*pCount == 0) {
+//        oldLst = (List *) malloc(sizeof(List));
         ++*pCount;
         oldLst->number = *pCount;
         oldLst->lastname = strdup(lastname);
@@ -40,34 +41,6 @@ List *addItem(List *oldLst, int *pCount, char *lastname, int physics, int histor
     return (oldLst);
 }
 
-List *deleteItem(List *root, int *pCount, int index) {
-    if (index == 0){
-        printf("Not found");
-        return root;
-    } else if (index == 1 && *pCount == 1){
-        --*pCount;
-        return root;
-    } else if (index == 1 && *pCount != 1){
-        List *temp;
-        temp = root;
-        root = root->ptr;
-        free(temp);
-        memset(temp, 0, sizeof(List));
-        --*pCount;
-        return root;
-    }
-    List *temp; 
-    temp = root; 
-    while (temp->number != index-1) {
-        temp = temp->ptr; 
-    }
-    List *lst = temp->ptr;
-    temp->ptr = temp->ptr->ptr;
-    free(lst);
-    memset(lst, 0, sizeof(List));
-    --*pCount;
-    return (temp);
-}
 
 void printItems(List *lst, int *pCount) {
     if (*pCount == 0) {
@@ -123,6 +96,23 @@ List *getLastItem(List *lst, int *pCount) {
     return lst;
 }
 
+void updateList(List *pList, int *pCount, int index, char *lastname, int physics, int history, int math) {
+    if (index == 0) {
+        printf("Not found");
+    }
+    while (pList->number != index) {
+        if(pList->ptr == NULL){
+            printf("Not found");
+            return;
+        }
+        pList = pList->ptr;
+    }
+    pList->lastname = strdup(lastname);
+    pList->physics = physics;
+    pList->history = history;
+    pList->math = math;
+}
+
 void deleteLists(List *lst) {
     List *next;
     do {
@@ -141,7 +131,7 @@ void print_menu() {
     printf("1. Print all items in list\n");
     printf("2. Print selected item\n");
     printf("3. Add new item\n");
-    printf("4. Delete selected item\n");
+    printf("4. Update selected item\n");
     printf("5. Delete lists\n");
     printf("6. Exit\n");
     printf("> ");
@@ -163,11 +153,11 @@ int main() {
     int count = 0;
     int *pCount = &count;
     List *lstHead = (List *) malloc(sizeof(List));
-
+//    List *lstHead;
     do {
-        print_menu(); 
+        print_menu(); // выводим меню на экран
 
-        variant = get_variant(6);
+        variant = get_variant(6); // получаем номер выбранного пункта меню
 
         switch (variant) {
             case 1:
@@ -201,7 +191,15 @@ int main() {
             case 4:
                 printf("Write number \n > ");
                 scanf("%d", &index);
-                lstHead = deleteItem(lstHead, pCount, index);
+                printf("Write student lastname \n > ");
+                scanf("%30s", lastname);
+                printf("\n Write physics rate \n > ");
+                scanf("%d", &physics);
+                printf("\n Write history rate \n > ");
+                scanf("%d", &history);
+                printf("\n Write math rate \n > ");
+                scanf("%d", &math);
+                updateList(lstHead, pCount, index, lastname, physics, history, math);
                 break;
 
             case 5:
@@ -212,3 +210,5 @@ int main() {
 
     return 0;
 }
+
+
